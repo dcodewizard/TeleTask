@@ -1,0 +1,12 @@
+<h2>Enter OTP to verify your account</h2>
+
+<%= form_with(model: @user, url: process_otp_verification_user_path(@user), method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :otp_code %>
+    <%= form.text_field :otp_code, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Verify OTP' %>
+  </div>
+<% end %>
